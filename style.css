@@ -1,0 +1,214 @@
+:root {
+  --bg-color: #0A140E; 
+  --card-color: #122017; 
+  --text-primary: #F4F0EB;
+  --text-secondary: #8F9E93; 
+  --accent-color: #CBA365; 
+  --border-color: #23362A;
+  --font-main: 'Inter', sans-serif;
+  --font-heading: 'Playfair Display', serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  line-height: 1.6;
+  padding: 32px 24px;
+  max-width: 800px;
+  margin: 0 auto; 
+}
+
+h1, h2, h3 { font-family: var(--font-heading); font-weight: 500; }
+
+h1 {
+  font-size: 2.8rem;
+  margin-bottom: 16px;
+  color: var(--accent-color); 
+  letter-spacing: -0.5px;
+}
+
+h2 {
+  font-size: 1.6rem;
+  margin-bottom: 24px;
+  color: var(--text-primary);
+  font-style: italic;
+}
+
+h3 { font-size: 1.2rem; margin-bottom: 4px; color: var(--text-primary); }
+
+p {
+  margin-bottom: 16px;
+  max-width: 70ch; 
+  color: var(--text-primary);
+}
+
+.date {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 64px;
+  font-family: var(--font-heading);
+}
+
+.nav-logo { font-weight: 700; font-size: 1.2rem; color: var(--accent-color); }
+
+.nav-links a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  margin-left: 24px;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.nav-links a:hover {
+  color: var(--accent-color); 
+}
+
+section { margin-bottom: 80px; }
+
+.card {
+  background-color: var(--card-color);
+  padding: 32px;
+  margin-bottom: 16px;
+  border-top: 1px solid var(--accent-color); 
+  border-bottom: 1px solid var(--border-color);
+}
+
+.flex-card {
+  display: flex;
+  gap: 64px;
+}
+
+.clean-list {
+  list-style-type: none;
+  color: var(--text-primary);
+}
+
+.clean-list li { margin-bottom: 12px; font-size: 0.95rem; }
+
+.btn-primary {
+  display: inline-block;
+  background-color: transparent;
+  color: var(--accent-color);
+  padding: 10px 24px;
+  text-decoration: none;
+  font-family: var(--font-heading);
+  font-style: italic;
+  font-size: 1.1rem;
+  margin-top: 16px;
+  border: 1px solid var(--accent-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  color: var(--bg-color);
+}
+
+.btn-secondary {
+  display: inline-block;
+  color: var(--accent-color);
+  text-decoration: none;
+  font-family: var(--font-main);
+  font-weight: 500;
+  font-size: 0.95rem;
+}
+
+.btn-secondary:hover { text-decoration: underline; }
+
+.resume-divider {
+  border: 0;
+  border-top: 1px solid var(--border-color);
+  margin: 80px 0 40px 0;
+}
+
+.resume-download-wrapper {
+  margin-bottom: 24px;
+  text-align: right;
+}
+
+.paper-document {
+  background-color: #ffffff;
+  color: #000000;
+  padding: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: var(--font-main);
+}
+
+.paper-document p { color: #000000; }
+.paper-document h2 { font-family: var(--font-main); font-weight: 600; color: #000000; margin-bottom: 4px; font-style: normal; }
+.paper-document h3 { font-family: var(--font-main); color: #000000; font-style: normal; font-weight: 600;}
+
+.resume-header {
+  border-bottom: 2px solid #000;
+  padding-bottom: 16px;
+  margin-bottom: 24px;
+}
+
+.resume-profile { font-style: italic; margin-bottom: 32px; }
+
+.resume-section-title {
+  text-transform: uppercase;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 8px;
+  margin-bottom: 16px;
+  margin-top: 24px;
+  font-size: 1rem;
+}
+
+.resume-item { margin-bottom: 16px; }
+
+.resume-item-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 4px;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+    padding-bottom: 40px;
+  }
+  
+  .nav-links a {
+    margin-left: 0;
+    margin-right: 16px;
+  }
+
+  .flex-card {
+    flex-direction: column;
+    gap: 24px;
+  }
+}
+
+@media print {
+  body {
+    background-color: white;
+    padding: 0;
+  }
+  
+  .nav, #hero, #experience, #skills, #contact, .resume-divider, .resume-download-wrapper {
+    display: none !important;
+  }
+
+  .paper-document {
+    padding: 0;
+    margin: 0;
+  }
+}
